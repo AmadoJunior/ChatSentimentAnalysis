@@ -1,21 +1,18 @@
-import { Config } from '@stencil/core';
-import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
+import { Config } from "@stencil/core";
+import tailwind, { tailwindHMR } from "stencil-tailwind-plugin";
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
-  plugins: [
-    tailwind(),
-    tailwindHMR(),
-  ],
-  globalStyle: 'src/global/app.css',
-  globalScript: 'src/global/app.ts',
-  taskQueue: 'async',
+  plugins: [tailwind(), tailwindHMR()],
+  globalStyle: "src/global/app.css",
+  globalScript: "src/global/app.ts",
+  taskQueue: "async",
   outputTargets: [
     {
-      type: 'www',
+      type: "www",
       // comment the following line to disable service workers in production
       serviceWorker: null,
-      baseUrl: 'https://myapp.local/',
+      baseUrl: "https://myapp.local/",
     },
   ],
 };
