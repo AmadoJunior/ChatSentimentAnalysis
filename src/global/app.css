@@ -7,6 +7,15 @@
 
   Any global CSS variables should also be applied here.
 */
+html {
+  --primary-color: #5851ff;
+  --primary-color-dark: #4b46dd;
+  --primary-color-light: #746fff;
+  --primary-color-contrast: #ffffff;
+  --primary-disabled-color: #888888c4;
+  --primary-bg-color: #ffffff;
+  --primary-border-color: #f0f0f0;
+}
 
 body {
   margin: 0px;

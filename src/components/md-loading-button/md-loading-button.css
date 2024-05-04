@@ -1,0 +1,57 @@
+button {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 10px;
+	background-color: var(--primary-color);
+	color: var(--primary-color-contrast);
+	border: 1px solid var(--primary-color);
+	border-radius: 5px;
+	font-family: inherit;
+	cursor: pointer;
+	transition: background 400ms;
+}
+
+button.loading::after {
+	content: "";
+	width: 16px;
+	height: 16px;
+	border: 1px solid var(--primary-disabled-color);
+	border-bottom-color: transparent;
+	border-radius: 50%;
+	display: inline-block;
+	box-sizing: border-box;
+	animation: rotation 1s linear infinite;
+}
+
+button.loading ::slotted([slot="icon"]) {
+	display: none !important;
+}
+
+button:hover {
+	background-color: var(--primary-color-dark);
+}
+
+button.disabled {
+	background-color: #00000000;
+	color: var(--primary-disabled-color);
+	border: 1px solid var(--primary-disabled-color);
+	cursor: default;
+	pointer-events: none;
+}
+
+::slotted([slot="text"]) {
+	margin: 0;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

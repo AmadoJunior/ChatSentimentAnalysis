@@ -14,6 +14,18 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface ChatWindow {
+        "match": MatchResults;
+    }
+    interface MdButton {
+        "disabled": boolean;
+        "onClick": (event: MouseEvent) => void;
+    }
+    interface MdLoadingButton {
+        "disabled": boolean;
+        "loading": boolean;
+        "onClick": (event: MouseEvent) => void;
+    }
 }
 declare global {
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
@@ -34,10 +46,31 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLChatWindowElement extends Components.ChatWindow, HTMLStencilElement {
+    }
+    var HTMLChatWindowElement: {
+        prototype: HTMLChatWindowElement;
+        new (): HTMLChatWindowElement;
+    };
+    interface HTMLMdButtonElement extends Components.MdButton, HTMLStencilElement {
+    }
+    var HTMLMdButtonElement: {
+        prototype: HTMLMdButtonElement;
+        new (): HTMLMdButtonElement;
+    };
+    interface HTMLMdLoadingButtonElement extends Components.MdLoadingButton, HTMLStencilElement {
+    }
+    var HTMLMdLoadingButtonElement: {
+        prototype: HTMLMdLoadingButtonElement;
+        new (): HTMLMdLoadingButtonElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "chat-window": HTMLChatWindowElement;
+        "md-button": HTMLMdButtonElement;
+        "md-loading-button": HTMLMdLoadingButtonElement;
     }
 }
 declare namespace LocalJSX {
@@ -48,10 +81,25 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface ChatWindow {
+        "match"?: MatchResults;
+    }
+    interface MdButton {
+        "disabled"?: boolean;
+        "onClick"?: (event: MouseEvent) => void;
+    }
+    interface MdLoadingButton {
+        "disabled"?: boolean;
+        "loading"?: boolean;
+        "onClick"?: (event: MouseEvent) => void;
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "chat-window": ChatWindow;
+        "md-button": MdButton;
+        "md-loading-button": MdLoadingButton;
     }
 }
 export { LocalJSX as JSX };
@@ -61,6 +109,9 @@ declare module "@stencil/core" {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "chat-window": LocalJSX.ChatWindow & JSXBase.HTMLAttributes<HTMLChatWindowElement>;
+            "md-button": LocalJSX.MdButton & JSXBase.HTMLAttributes<HTMLMdButtonElement>;
+            "md-loading-button": LocalJSX.MdLoadingButton & JSXBase.HTMLAttributes<HTMLMdLoadingButtonElement>;
         }
     }
 }
