@@ -34,7 +34,7 @@ button:hover {
 	background-color: var(--primary-color-dark);
 }
 
-button.disabled {
+button:disabled {
 	background-color: #00000000;
 	color: var(--primary-disabled-color);
 	border: 1px solid var(--primary-disabled-color);

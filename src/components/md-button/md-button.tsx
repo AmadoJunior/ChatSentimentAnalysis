@@ -12,7 +12,7 @@ export class MdButton {
 
   @Listen("mousedown")
   handleMouseDown(event: MouseEvent) {
-    this.createRipple(event);
+    if (!this.disabled) this.createRipple(event);
   }
 
   createRipple(event: MouseEvent) {
@@ -39,12 +39,7 @@ export class MdButton {
 
   render() {
     return (
-      <button
-        class={{
-          disabled: this.disabled,
-        }}
-        onClick={event => this.handleClick(event)}
-      >
+      <button disabled={this.disabled} onClick={event => this.handleClick(event)}>
         <slot name="text"></slot>
         <slot name="icon"></slot>
       </button>

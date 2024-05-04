@@ -22,8 +22,8 @@ export class MdLoadingButton {
       <button
         class={{
           loading: this.loading,
-          disabled: this.loading || this.disabled,
         }}
+        disabled={this.loading || this.disabled}
         onClick={event => this.handleClick(event)}
       >
         <slot name="text"></slot>
